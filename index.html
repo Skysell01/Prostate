@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proman - प्रोस्टेट ग्रंथि के कामकाज को सामान्य करता है और शक्ति बढ़ाता है! पुरुषों के लिए प्राकृतिक कैप्सूल।">
+    <title>Proman - पुरुषों के लिए कैप्सूल</title>
+    <!-- Premium Google Fonts for English and Hindi support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top smoky/glowy background wrappers managed by CSS -->
+    <div class="glow-bg-blob blob-1"></div>
+    <div class="glow-bg-blob blob-2"></div>
+    <div class="glow-bg-blob blob-3"></div>
+
+    <!-- Clouds background container -->
+    <div class="clouds-container">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+        <div class="cloud cloud-5"></div>
+    </div>
+
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="logo-text">Proman</span>
+                <span class="logo-badge">पुरुषों के लिए कैप्सूल</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#symptoms" class="nav-link">लक्षण</a>
+                <a href="#how-it-works" class="nav-link">काम कैसे करता है</a>
+                <a href="#composition" class="nav-link">संरचना</a>
+                <a href="#order-form-top" class="order-btn-nav">संपर्क भरें</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="section-container hero-grid">
+                <!-- Left: Order Form Card -->
+                <div class="order-card-wrapper">
+                    <div class="timer-badge">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>प्रमोशन समाप्त होने से पहले समय निकालें</span>
+                    </div>
+                    
+                    <!-- Real countdown timer -->
+                    <div class="countdown-timer" id="timer-top">
+                        <div class="time-block">
+                            <span class="time-num minutes">30</span>
+                            <span class="time-label">मिनट</span>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-block">
+                            <span class="time-num seconds">00</span>
+                            <span class="time-label">सेकंड</span>
+                        </div>
+                    </div>
+
+                    <div class="price-container">
+                        <div class="price-old">
+                            <span class="price-label">पिछली कीमत</span>
+                            <span class="price-val">₹4,980</span>
+                        </div>
+                        <div class="price-new">
+                            <span class="price-label">डिस्काउंट कीमत</span>
+                            <span class="price-val">₹1,999</span>
+                        </div>
+                    </div>
+
+                    <form class="lead-form" id="order-form-top" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name-top"><i class="fa-regular fa-user"></i> आपका नाम</label>
+                            <input type="text" id="name-top" name="name" placeholder="अपना नाम दर्ज करें" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-top"><i class="fa-solid fa-phone"></i> फ़ोन नंबर</label>
+                            <input type="tel" id="phone-top" name="phone" placeholder="अपना फ़ोन नंबर दर्ज करें" required>
+                        </div>
+                        <button type="submit" class="submit-btn-top">प्रोमन खरीदें</button>
+                    </form>
+                </div>
+
+                <!-- Middle: Main Product Image Placeholder -->
+                <div class="hero-product-image">
+                    <img src="product.jpg" alt="Proman Capsules & Box" class="hero-product-img">
+                </div>
+
+                <!-- Right: Fit Muscular Man & Pointer -->
+                <div class="hero-man-image">
+                    <img src="muscular-man.png" alt="Muscular Man" class="hero-man-img">
+                    <!-- Absolute positioned callout/pointer -->
+                    <div class="hero-pointer-bubble">
+                        <i class="fa-solid fa-circle-check bubble-icon"></i>
+                        <span class="bubble-text">प्रोस्टेटाइटिस के लक्षणों को कम करने में मदद करता है और शक्ति बढ़ाता है!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slogan Banner -->
+        <section class="slogan-section">
+            <div class="section-container text-center">
+                <h2 class="slogan-text">"Proman प्रोस्टेट ग्रंथि के कामकाज को सामान्य करता है और शक्ति बढ़ाता है!"</h2>
+            </div>
+        </section>
+
+        <!-- Symptoms Section -->
+        <section class="symptoms-section" id="symptoms">
+            <div class="section-container">
+                <h2 class="section-title text-center">प्रोस्टेटाइटिस के लक्षणों पर ध्यान दें</h2>
+                
+                <div class="symptoms-grid">
+                    <!-- Left: Stressed Man Image Placeholder -->
+                    <div class="symptoms-image-wrapper">
+                        <img src="symptoms-man.jpg" alt="Stressed Man" class="symptoms-man-img">
+                    </div>
+
+                    <!-- Right: Symptoms List Items -->
+                    <div class="symptoms-list">
+                        <div class="symptom-item">
+                            <span class="symptom-text">जल्दी पेशाब आना</span>
+                            <div class="symptom-icon-wrap"><i class="fa-solid fa-toilet"></i></div>
+                        </div>
+                        <div class="symptom-item">
+                            <span class="symptom-text">बेचैनी और जलन वंक्षण क्षेत्र में</span>
+                            <div class="symptom-icon-wrap"><i class="fa-solid fa-fire"></i></div>
+                        </div>
+                        <div class="symptom-item">
+                            <span class="symptom-text">पीठ के निचले हिस्से, श्रोणि में दर्द, जांघों के शीर्ष पर</span>
+                            <div class="symptom-icon-wrap"><i class="fa-solid fa-person-falling-burst"></i></div>
+                        </div>
+                        <div class="symptom-item">
+                            <span class="symptom-text">यौन क्रिया विकार</span>
+                            <div class="symptom-icon-wrap"><i class="fa-solid fa-venus-mars"></i></div>
+                        </div>
+                        <div class="symptom-item">
+                            <span class="symptom-text">शीघ्रपतन</span>
+                            <div class="symptom-icon-wrap"><i class="fa-solid fa-bolt-lightning"></i></div>
+                        </div>
+                        <div class="symptom-item">
+                            <span class="symptom-text">निर्माण संबंधी समस्याएं (Erection problems)</span>
+                            <div class="symptom-icon-wrap"><i class="fa-solid fa-heart-crack"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consequences Section -->
+        <section class="consequences-section">
+            <div class="section-container">
+                <h2 class="section-title text-center text-red">प्रोस्टेटाइटिस के गंभीर परिणाम हो सकते हैं:</h2>
+                
+                <div class="consequences-grid">
+                    <!-- Item 1: Impotence -->
+                    <div class="consequence-card">
+                        <div class="consequence-image">
+                            <img src="impotence.png" alt="नपुंसकता (Impotence)" class="consequence-img">
+                        </div>
+                        <div class="consequence-info">
+                            <h3>नपुंसकता</h3>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Infertility -->
+                    <div class="consequence-card">
+                        <div class="consequence-image">
+                                <img src="infertility.png" alt="बांझपन (Infertility)" class="consequence-img">
+                        </div>
+                        <div class="consequence-info">
+                            <h3>बांझपन</h3>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Prostate Cancer -->
+                    <div class="consequence-card">
+                        <div class="consequence-image">
+                                <img src="cancer.png" alt="प्रोस्टेट कैंसर (Prostate Cancer)" class="consequence-img">
+                        </div>
+                        <div class="consequence-info">
+                            <h3>प्रोस्टेट कैंसर</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works Section -->
+        <section class="how-it-works-section" id="how-it-works">
+            <div class="section-container">
+                <h2 class="section-title text-center">Proman कैसे काम करता है</h2>
+                
+                <div class="how-works-intro">
+                    <p class="lead-text">Proman एक प्राकृतिक फाइटोकॉम्प्लेक्स है जो प्रोस्टेट ग्रंथि के कामकाज को जल्दी और प्रभावी ढंग से सामान्य करता है और शक्ति बढ़ाता है।</p>
+                </div>
+
+                <div class="how-works-details-grid">
+                    <!-- Text description & 4 directions -->
+                    <div class="directions-wrapper">
+                        <h3>Proman कैप्सूल तुरंत काम करते हैं 4 दिशाओं में:</h3>
+                        <div class="directions-list">
+                            <div class="direction-item">
+                                <span class="direction-text">जीवाणुरोधी प्रभाव रखें</span>
+                                <div class="direction-check"><i class="fa-solid fa-check"></i></div>
+                            </div>
+                            <div class="direction-item">
+                                <span class="direction-text">प्रोस्टेट और मूत्र पथ कोशिकाओं के ट्यूमर विकृति के विकास को रोकता है</span>
+                                <div class="direction-check"><i class="fa-solid fa-check"></i></div>
+                            </div>
+                            <div class="direction-item">
+                                <span class="direction-text">क्षमता को सामान्य करें</span>
+                                <div class="direction-check"><i class="fa-solid fa-check"></i></div>
+                            </div>
+                            <div class="direction-item">
+                                <span class="direction-text">प्रोस्टेट ग्रंथि की कार्यप्रणाली को सामान्य करता है</span>
+                                <div class="direction-check"><i class="fa-solid fa-check"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product image placeholder -->
+                    <div class="how-works-image">
+                        <img src="product.jpg" alt="Proman Capsules & Box" class="how-works-product-img">
+                    </div>
+                </div>
+
+                <!-- Bottom warning block -->
+                <div class="warning-block">
+                    <div class="warning-left">
+                        <i class="fa-solid fa-triangle-exclamation warning-alert-icon"></i>
+                        <p class="warning-text">इसके अलावा, अद्वितीय हर्बल फॉर्मूला Proman प्रतिरक्षा प्रणाली को उत्तेजित करता है, समग्र स्वास्थ्य में सुधार करता है, मानसिक and शारीरिक थकान से राहत देता है और प्रदर्शन बढ़ाता है।</p>
+                    </div>
+                    <div class="warning-right">
+                        <img src="prostate-anatomy.png" alt="Prostate Anatomy" class="warning-prostate-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Composition Section -->
+        <section class="composition-section" id="composition">
+            <div class="section-container">
+                <h2 class="section-title text-center">संरचना Proman</h2>
+                
+                <div class="composition-grid">
+                    <!-- Left: Ingredients details -->
+                    <div class="ingredients-list">
+                        <!-- Vitamin C -->
+                        <div class="ingredient-card">
+                            <div class="ingredient-img-wrapper">
+                                <img src="vit-c.png" alt="Vitamin C" class="ingredient-img">
+                            </div>
+                            <div class="ingredient-info">
+                                <h4>विटामिन सी</h4>
+                                <p>प्रोस्टेट ग्रंथि की जलन और सूजन को कम करता है।</p>
+                            </div>
+                        </div>
+
+                        <!-- Folic Acid -->
+                        <div class="ingredient-card">
+                            <div class="ingredient-img-wrapper">
+                                <img src="folic-acid.png" alt="Folic Acid" class="ingredient-img">
+                            </div>
+                            <div class="ingredient-info">
+                                <h4>फोलिक एसिड</h4>
+                                <p>कोशिकाओं को कैंसर बनने से रोकता है।</p>
+                            </div>
+                        </div>
+
+                        <!-- Vitamin E -->
+                        <div class="ingredient-card">
+                            <div class="ingredient-img-wrapper">
+                                <img src="vit-e.png" alt="Vitamin E" class="ingredient-img">
+                            </div>
+                            <div class="ingredient-info">
+                                <h4>विटामिन ई</h4>
+                                <p>पेशाब को सामान्य करता है और रात के समय आग्रह की आवृत्ति को कम करता है। ताकत बढ़ती है।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Product layout (or duplicate of placeholder 2) -->
+                    <div class="composition-product">
+                        <img src="product.jpg" alt="Proman Capsules & Box" class="composition-product-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Call to Action Section -->
+        <section class="bottom-cta-section">
+            <div class="section-container bottom-cta-grid">
+                <!-- Left: Order form card with Spanish discount text -->
+                <div class="order-card-wrapper bottom-form-wrapper">
+                    <!-- Heading from Spanish: Consigue un 50% de descuento -->
+                    <div class="discount-badge-bottom">
+                        <h3>Consigue un 50% de descuento</h3>
+                        <span>50% की विशेष छूट प्राप्त करें!</span>
+                    </div>
+
+                    <div class="timer-badge">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>ऑफर समाप्त होने से पहले खरीदें</span>
+                    </div>
+                    
+                    <!-- Real countdown timer linked to top timer -->
+                    <div class="countdown-timer" id="timer-bottom">
+                        <div class="time-block">
+                            <span class="time-num minutes">30</span>
+                            <span class="time-label">मिनट</span>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-block">
+                            <span class="time-num seconds">00</span>
+                            <span class="time-label">सेकंड</span>
+                        </div>
+                    </div>
+
+                    <div class="price-container">
+                        <div class="price-old">
+                            <span class="price-label">पिछली कीमत</span>
+                            <span class="price-val">₹4,980</span>
+                        </div>
+                        <div class="price-new">
+                            <span class="price-label">डिस्काउंट कीमत</span>
+                            <span class="price-val">₹1,999</span>
+                        </div>
+                    </div>
+
+                    <form class="lead-form" id="order-form-bottom" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name-bottom"><i class="fa-regular fa-user"></i> आपका नाम</label>
+                            <input type="text" id="name-bottom" name="name" placeholder="अपना नाम दर्ज करें" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-bottom"><i class="fa-solid fa-phone"></i> फ़ोन नंबर</label>
+                            <input type="tel" id="phone-bottom" name="phone" placeholder="अपना फ़ोन नंबर दर्ज करें" required>
+                        </div>
+                        <button type="submit" class="submit-btn-bottom">प्रोमन खरीदें</button>
+                    </form>
+                </div>
+
+                <!-- Middle: Product Image Placeholder -->
+                <div class="bottom-product-image">
+                    <img src="product.jpg" alt="Proman Product" class="bottom-product-img">
+                </div>
+
+                <!-- Right: Muscular Man Image Placeholder & Slogan -->
+                <div class="bottom-man-image">
+                    <img src="muscular-man.png" alt="Muscular Man" class="bottom-man-img">
+                    <!-- Pointer bubble -->
+                    <div class="hero-pointer-bubble bottom-bubble">
+                        <i class="fa-solid fa-shield-halved bubble-icon"></i>
+                        <span class="bubble-text">प्रोमैन प्रोस्टेट ग्रंथि की कार्यप्रणाली को सामान्य करता है और शक्ति बढ़ाता है!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="section-container text-center">
+            <p class="footer-links">
+                <a href="#home">होम</a> | 
+                <a href="#symptoms">लक्षण</a> | 
+                <a href="#how-it-works">कार्यप्रणाली</a> | 
+                <a href="#" class="open-privacy">गोपनीयता नीति (Privacy Policy)</a>
+            </p>
+            <p class="copyright-text">© 2026 Proman. सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
+    <!-- Form Submission Success Modal Popup -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="success-modal-card">
+            <div class="modal-success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>धन्यवाद!</h2>
+            <p>आपका ऑर्डर सफलतापूर्वक दर्ज कर लिया गया है।</p>
+            <p class="modal-detail">हमारे प्रतिनिधि जल्द ही आपसे संपर्क करेंगे।</p>
+            <button class="modal-close-btn" id="close-modal">ठीक है</button>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal-overlay" id="privacy-modal">
+        <div class="privacy-modal-card">
+            <h2>गोपनीयता नीति (Privacy Policy)</h2>
+            <div class="privacy-content">
+                <p>हम आपकी गोपनीयता का सम्मान करते हैं। इस वेबसाइट पर एकत्र की गई सभी जानकारी का उपयोग केवल आपके ऑर्डर को संसाधित करने और आपसे संपर्क करने के लिए किया जाएगा।</p>
+                <p>हम आपकी व्यक्तिगत जानकारी को किसी भी तीसरे पक्ष के साथ साझा या बेचते नहीं हैं।</p>
+                <p>सुरक्षित और विश्वसनीय सेवा प्रदान करने के लिए हम सभी आवश्यक सुरक्षा उपाय अपनाते हैं।</p>
+            </div>
+            <button class="modal-close-btn" id="close-privacy-modal">बंद करें</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
