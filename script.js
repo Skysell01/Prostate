@@ -172,36 +172,39 @@ document.addEventListener('DOMContentLoaded', () => {
                     const nameValue = nameInput.value.trim();
                     const phoneValue = phoneInput.value.trim();
 
+                    const payload = {
+                        name: nameValue,
+                        Name: nameValue,
+                        NAME: nameValue,
+                        
+                        phone: phoneValue,
+                        Phone: phoneValue,
+                        PHONE: phoneValue,
+                        
+                        contact: phoneValue,
+                        Contact: phoneValue,
+                        CONTACT: phoneValue,
+                        
+                        number: phoneValue,
+                        Number: phoneValue,
+                        NUMBER: phoneValue
+                    };
+
                     // Prepare URLSearchParams with all casing variations for maximum compatibility
-                    const queryParams = new URLSearchParams();
-                    queryParams.append('name', nameValue);
-                    queryParams.append('Name', nameValue);
-                    queryParams.append('NAME', nameValue);
-                    
-                    queryParams.append('phone', phoneValue);
-                    queryParams.append('Phone', phoneValue);
-                    queryParams.append('PHONE', phoneValue);
-                    
-                    queryParams.append('contact', phoneValue);
-                    queryParams.append('Contact', phoneValue);
-                    queryParams.append('CONTACT', phoneValue);
-                    
-                    queryParams.append('number', phoneValue);
-                    queryParams.append('Number', phoneValue);
-                    queryParams.append('NUMBER', phoneValue);
+                    const queryParams = new URLSearchParams(payload);
 
                     // Use environment variable from Cloudflare build settings (defined in vite.config.js) or fall back to default
                     const baseWebhookUrl = process.env.webhook || 'https://script.google.com/macros/s/AKfycbxCkSWV7o5p0Y4dxB1KIPdpKhFLCSDLmhkxJDXJcm-9uZtYnSdyjlXHvXDqRwC2yMEw/exec';
                     const webhookUrl = `${baseWebhookUrl}?${queryParams.toString()}`;
 
-                    // Send POST request using application/x-www-form-urlencoded to ensure compatibility with e.parameter
+                    // Send POST request using application/json stringify to ensure it doesn't hang in no-cors mode
                     fetch(webhookUrl, {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'
+                            'Content-Type': 'application/json'
                         },
-                        body: queryParams
+                        body: JSON.stringify(payload)
                     })
                     .then(() => {
                         // Reset button state
