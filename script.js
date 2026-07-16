@@ -175,7 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         phone: phoneInput.value.trim()
                     };
 
-                    const webhookUrl = 'https://script.google.com/macros/s/AKfycbyDfswb6wOPI9t4yS13cvTHIA10ardKA20k9as-e8wWdloAh7gWwSD8NvrBqSlmpr46/exec';
+                    // Use environment variable from Cloudflare build settings (defined in vite.config.js) or fall back to default
+                    const webhookUrl = process.env.webhook || 'https://script.google.com/macros/s/AKfycbyDfswb6wOPI9t4yS13cvTHIA10ardKA20k9as-e8wWdloAh7gWwSD8NvrBqSlmpr46/exec';
 
                     // Send POST request (using no-cors mode to bypass Google Script redirection rules)
                     fetch(webhookUrl, {
