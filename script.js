@@ -170,13 +170,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitBtn.textContent = 'भेजा जा रहा है...';
 
                     // Prepare payload
+                    const nameValue = nameInput.value.trim();
+                    const phoneValue = phoneInput.value.trim();
+
                     const payload = {
-                        name: nameInput.value.trim(),
-                        phone: phoneInput.value.trim()
+                        name: nameValue,
+                        phone: phoneValue,
+                        contact: phoneValue
                     };
 
+                    // Prepare URL with query parameters for maximum compatibility with e.parameter
+                    const queryParams = new URLSearchParams();
+                    queryParams.append('name', nameValue);
+                    queryParams.append('phone', phoneValue);
+                    queryParams.append('contact', phoneValue);
+
                     // Use environment variable from Cloudflare build settings (defined in vite.config.js) or fall back to default
-                    const webhookUrl = process.env.webhook || 'https://script.google.com/macros/s/AKfycbxCkSWV7o5p0Y4dxB1KIPdpKhFLCSDLmhkxJDXJcm-9uZtYnSdyjlXHvXDqRwC2yMEw/exec';
+                    const baseWebhookUrl = process.env.webhook || 'https://script.google.com/macros/s/AKfycbxCkSWV7o5p0Y4dxB1KIPdpKhFLCSDLmhkxJDXJcm-9uZtYnSdyjlXHvXDqRwC2yMEw/exec';
+                    const webhookUrl = `${baseWebhookUrl}?${queryParams.toString()}`;
 
                     // Send POST request (using no-cors mode to bypass Google Script redirection rules)
                     fetch(webhookUrl, {
