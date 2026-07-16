@@ -169,34 +169,39 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'भेजा जा रहा है...';
 
-                    // Prepare payload
                     const nameValue = nameInput.value.trim();
                     const phoneValue = phoneInput.value.trim();
 
-                    const payload = {
-                        name: nameValue,
-                        phone: phoneValue,
-                        contact: phoneValue
-                    };
-
-                    // Prepare URL with query parameters for maximum compatibility with e.parameter
+                    // Prepare URLSearchParams with all casing variations for maximum compatibility
                     const queryParams = new URLSearchParams();
                     queryParams.append('name', nameValue);
+                    queryParams.append('Name', nameValue);
+                    queryParams.append('NAME', nameValue);
+                    
                     queryParams.append('phone', phoneValue);
+                    queryParams.append('Phone', phoneValue);
+                    queryParams.append('PHONE', phoneValue);
+                    
                     queryParams.append('contact', phoneValue);
+                    queryParams.append('Contact', phoneValue);
+                    queryParams.append('CONTACT', phoneValue);
+                    
+                    queryParams.append('number', phoneValue);
+                    queryParams.append('Number', phoneValue);
+                    queryParams.append('NUMBER', phoneValue);
 
                     // Use environment variable from Cloudflare build settings (defined in vite.config.js) or fall back to default
                     const baseWebhookUrl = process.env.webhook || 'https://script.google.com/macros/s/AKfycbxCkSWV7o5p0Y4dxB1KIPdpKhFLCSDLmhkxJDXJcm-9uZtYnSdyjlXHvXDqRwC2yMEw/exec';
                     const webhookUrl = `${baseWebhookUrl}?${queryParams.toString()}`;
 
-                    // Send POST request (using no-cors mode to bypass Google Script redirection rules)
+                    // Send POST request using application/x-www-form-urlencoded to ensure compatibility with e.parameter
                     fetch(webhookUrl, {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/x-www-form-urlencoded'
                         },
-                        body: JSON.stringify(payload)
+                        body: queryParams
                     })
                     .then(() => {
                         // Reset button state
