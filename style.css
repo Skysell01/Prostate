@@ -1334,13 +1334,11 @@ section {
 .hero-product-image, .bottom-product-image {
     position: relative;
     z-index: 2; /* Product overlaps on top */
-    transform: translateX(65px); /* Shift right to overlap the man */
 }
 
 .hero-man-image, .bottom-man-image {
     position: relative;
     z-index: 1; /* Man goes behind the product */
-    transform: translateX(-35px); /* Shift left to integrate with product */
 }
 
 .symptoms-man-img {
@@ -1353,7 +1351,20 @@ section {
     mix-blend-mode: screen; /* Strips pure black background */
     position: relative;
     z-index: 2;
-    transform: translate(50px, -10px); /* Overlays on text cards to the right */
+}
+
+@media screen and (min-width: 1025px) {
+    .hero-product-image, .bottom-product-image {
+        transform: translateX(65px); /* Shift right to overlap the man */
+    }
+
+    .hero-man-image, .bottom-man-image {
+        transform: translateX(-35px); /* Shift left to integrate with product */
+    }
+
+    .symptoms-man-img {
+        transform: translate(50px, -10px); /* Overlays on text cards to the right */
+    }
 }
 
 .ingredient-img {
