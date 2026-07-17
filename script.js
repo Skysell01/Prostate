@@ -2,6 +2,11 @@
  * Proman Prostate Landing Page - Interactive Scripts
  */
 
+// Fallback for process.env when running raw in browser without bundlers
+if (typeof process === 'undefined') {
+    window.process = { env: {} };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // === 1. Synchronized Countdown Timer with Session Persistence ===
     const TIMER_DURATION_KEY = 'proman_timer_seconds';
@@ -194,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const queryParams = new URLSearchParams(payload);
 
                     // Use environment variable from Cloudflare build settings (defined in vite.config.js) or fall back to default
-                    const baseWebhookUrl = process.env.webhook || 'https://script.google.com/macros/s/AKfycbxCkSWV7o5p0Y4dxB1KIPdpKhFLCSDLmhkxJDXJcm-9uZtYnSdyjlXHvXDqRwC2yMEw/exec';
+                    const baseWebhookUrl = process.env.webhook || 'https://script.google.com/macros/s/AKfycbziPOCKVsfNsOBHMwrsTK5oVZ3PRjldEBq_qqLg8P4uJurU3Hg3p_faerZlxV1y0s13/exec';
                     const webhookUrl = `${baseWebhookUrl}?${queryParams.toString()}`;
 
                     // Send POST request using application/json stringify to ensure it doesn't hang in no-cors mode
