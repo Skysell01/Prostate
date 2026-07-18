@@ -177,6 +177,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     const nameValue = nameInput.value.trim();
                     const phoneValue = phoneInput.value.trim();
 
+                    // Duplicate Lead Prevention Check (Client-side)
+                    const normalizedPhone = phoneValue.replace(/\D/g, "");
+                    let submittedPhones = [];
+                    try {
+                        submittedPhones = JSON.parse(localStorage.getItem('proman_submitted_leads') || '[]');
+                    } catch (e) {
+                        submittedPhones = [];
+                    }
+
+                    if (submittedPhones.includes(normalizedPhone)) {
+                        console.warn('Duplicate lead prevented for number:', phoneValue);
+                        // Mimic successful submission flow for UX consistency
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalBtnText;
+                            nameInput.value = '';
+                            phoneInput.value = '';
+                            openModal(successModal);
+                        }, 500);
+                        return;
+                    }
+
+                    // Save lead to local storage immediately to prevent rapid double-submits
+                    submittedPhones.push(normalizedPhone);
+                    try {
+                        localStorage.setItem('proman_submitted_leads', JSON.stringify(submittedPhones));
+                    } catch (e) {
+                        console.error('Failed to save to localStorage:', e);
+                    }
+
                     const payload = {
                         name: nameValue,
                         Name: nameValue,
@@ -195,22 +225,46 @@ document.addEventListener('DOMContentLoaded', () => {
                         NUMBER: phoneValue
                     };
 
-                    // Prepare URLSearchParams with all casing variations for maximum compatibility
+                    // Prepare URLSearchParams for Google Sheets Webhook
                     const queryParams = new URLSearchParams(payload);
 
                     // Use environment variable from Cloudflare build settings (defined in vite.config.js) or fall back to default
                     const baseWebhookUrl = process.env.webhook || 'https://script.google.com/macros/s/AKfycbziPOCKVsfNsOBHMwrsTK5oVZ3PRjldEBq_qqLg8P4uJurU3Hg3p_faerZlxV1y0s13/exec';
                     const webhookUrl = `${baseWebhookUrl}?${queryParams.toString()}`;
 
-                    // Send POST request using application/json stringify to ensure it doesn't hang in no-cors mode
-                    fetch(webhookUrl, {
+                    // Send POST request to Google Sheets Webhook
+                    const webhookPromise = fetch(webhookUrl, {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify(payload)
-                    })
+                    });
+
+                    // Prepare CRM credentials and variables
+                    const crmUrl = process.env.CRM_URL || 'https://macherbs.com/apileads/leads.php';
+                    const crmChannelId = process.env.CRM_CHANNEL_ID || 'AJT-XENOLIVE';
+                    const crmProductId = process.env.CRM_PRODUCT_ID || '105';
+                    const crmToken = process.env.CRM_TOKEN || 'M6JNcKxcNszQwNYZW';
+
+                    const crmParams = new URLSearchParams();
+                    crmParams.append('name', nameValue);
+                    crmParams.append('phone', phoneValue);
+                    crmParams.append('channel_id', crmChannelId);
+                    crmParams.append('channel', crmChannelId);
+                    crmParams.append('product_id', crmProductId);
+                    crmParams.append('product', crmProductId);
+                    crmParams.append('token', crmToken);
+
+                    // Send POST request to CRM URL
+                    const crmPromise = fetch(crmUrl, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: crmParams
+                    });
+
+                    Promise.all([webhookPromise, crmPromise])
                     .then(() => {
                         // Reset button state
                         submitBtn.disabled = false;

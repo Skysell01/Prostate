@@ -7,7 +7,11 @@ export default defineConfig(({ mode }) => {
   
   return {
     define: {
-      'process.env.webhook': JSON.stringify(env.webhook || env.WEBHOOK || '')
+      'process.env.webhook': JSON.stringify(env.webhook || env.WEBHOOK || ''),
+      'process.env.CRM_URL': JSON.stringify(env.CRM_URL || ''),
+      'process.env.CRM_CHANNEL_ID': JSON.stringify(env.CRM_CHANNEL_ID || ''),
+      'process.env.CRM_PRODUCT_ID': JSON.stringify(env.CRM_PRODUCT_ID || ''),
+      'process.env.CRM_TOKEN': JSON.stringify(env.CRM_TOKEN || '')
     }
   };
 });
