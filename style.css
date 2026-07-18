@@ -31,13 +31,20 @@
     scroll-behavior: smooth;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: var(--bg-dark);
     color: var(--color-text-main);
     font-family: var(--font-body);
     font-size: 18px;
     line-height: 1.6;
-    overflow-x: hidden;
     position: relative;
 }
 
@@ -561,6 +568,7 @@ section {
 }
 
 .form-group input {
+    width: 100%;
     background-color: rgba(5, 14, 26, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
@@ -578,6 +586,7 @@ section {
 }
 
 .submit-btn-top, .submit-btn-bottom {
+    width: 100%;
     background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
     color: #ffffff;
     border: none;
@@ -1085,6 +1094,10 @@ section {
 
 /* Mobile & Small Tablets */
 @media screen and (max-width: 768px) {
+    .glow-bg-blob, .clouds-container {
+        display: none;
+    }
+
     section {
         padding: 40px 0;
     }
