@@ -265,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const crmParams = new URLSearchParams();
                     crmParams.append('name', nameValue);
+                    crmParams.append('number', phoneValue); // CRM API expects 'number' for phone/mobile
                     crmParams.append('phone', phoneValue);
                     crmParams.append('channel_id', crmChannelId);
                     crmParams.append('channel', crmChannelId);
