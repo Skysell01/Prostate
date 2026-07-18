@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alpha Man - प्रोस्टेट ग्रंथि के कामकाज को सामान्य करता है और शक्ति बढ़ाता है! पुरुषों के लिए प्राकृतिक कैप्सूल।">
+    <meta name="description"
+        content="Alpha Man - प्रोस्टेट ग्रंथि के कामकाज को सामान्य करता है और शक्ति बढ़ाता है! पुरुषों के लिए प्राकृतिक कैप्सूल।">
     <title>Alpha Man - पुरुषों के लिए कैप्सूल</title>
     <!-- Premium Google Fonts for English and Hindi support -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Top smoky/glowy background wrappers managed by CSS -->
     <div class="glow-bg-blob blob-1"></div>
@@ -55,7 +60,7 @@
                         <i class="fa-regular fa-clock"></i>
                         <span>प्रमोशन समाप्त होने से पहले समय निकालें</span>
                     </div>
-                    
+
                     <!-- Real countdown timer -->
                     <div class="countdown-timer" id="timer-top">
                         <div class="time-block">
@@ -83,11 +88,11 @@
                     <form class="lead-form" id="order-form-top" action="#" method="POST">
                         <div class="form-group">
                             <label for="name-top"><i class="fa-regular fa-user"></i> आपका नाम</label>
-                            <input type="text" id="name-top" name="name" placeholder="अपना नाम दर्ज करें" required>
+                            <input type="text" id="name-top" name="name" placeholder="अपना नाम दर्ज करें" pattern="[a-zA-Z\u0900-\u097F\s]{2,}" title="केवल अक्षर (English या Hindi) दर्ज करें (कम से कम 2 अक्षर)" required>
                         </div>
                         <div class="form-group">
                             <label for="phone-top"><i class="fa-solid fa-phone"></i> फ़ोन नंबर</label>
-                            <input type="tel" id="phone-top" name="phone" placeholder="अपना फ़ोन नंबर दर्ज करें" required>
+                            <input type="tel" id="phone-top" name="phone" placeholder="अपना फ़ोन नंबर दर्ज करें" pattern="[0-9]{10}" maxlength="10" title="कृपया 10 अंकों का मोबाइल नंबर दर्ज करें" required>
                         </div>
                         <button type="submit" class="submit-btn-top">अल्फा मैन खरीदें</button>
                     </form>
@@ -104,7 +109,8 @@
                     <!-- Absolute positioned callout/pointer -->
                     <div class="hero-pointer-bubble">
                         <i class="fa-solid fa-circle-check bubble-icon"></i>
-                        <span class="bubble-text">प्रोस्टेटाइटिस के लक्षणों को कम करने में मदद करता है और शक्ति बढ़ाता है!</span>
+                        <span class="bubble-text">प्रोस्टेटाइटिस के लक्षणों को कम करने में मदद करता है और शक्ति बढ़ाता
+                            है!</span>
                     </div>
                 </div>
             </div>
@@ -113,7 +119,8 @@
         <!-- Slogan Banner -->
         <section class="slogan-section">
             <div class="section-container text-center">
-                <h2 class="slogan-text">"Alpha Man प्रोस्टेट ग्रंथि के कामकाज को सामान्य करता है और शक्ति बढ़ाता है!"</h2>
+                <h2 class="slogan-text">"Alpha Man प्रोस्टेट ग्रंथि के कामकाज को सामान्य करता है और शक्ति बढ़ाता है!"
+                </h2>
             </div>
         </section>
 
@@ -121,7 +128,7 @@
         <section class="symptoms-section" id="symptoms">
             <div class="section-container">
                 <h2 class="section-title text-center">प्रोस्टेटाइटिस के लक्षणों पर ध्यान दें</h2>
-                
+
                 <div class="symptoms-grid">
                     <!-- Left: Stressed Man Image Placeholder -->
                     <div class="symptoms-image-wrapper">
@@ -163,7 +170,7 @@
         <section class="consequences-section">
             <div class="section-container">
                 <h2 class="section-title text-center text-red">प्रोस्टेटाइटिस के गंभीर परिणाम हो सकते हैं:</h2>
-                
+
                 <div class="consequences-grid">
                     <!-- Item 1: Impotence -->
                     <div class="consequence-card">
@@ -178,7 +185,7 @@
                     <!-- Item 2: Infertility -->
                     <div class="consequence-card">
                         <div class="consequence-image">
-                                <img src="infertility.png" alt="बांझपन (Infertility)" class="consequence-img">
+                            <img src="infertility.png" alt="बांझपन (Infertility)" class="consequence-img">
                         </div>
                         <div class="consequence-info">
                             <h3>बांझपन</h3>
@@ -188,7 +195,7 @@
                     <!-- Item 3: Prostate Cancer -->
                     <div class="consequence-card">
                         <div class="consequence-image">
-                                <img src="cancer.png" alt="प्रोस्टेट कैंसर (Prostate Cancer)" class="consequence-img">
+                            <img src="cancer.png" alt="प्रोस्टेट कैंसर (Prostate Cancer)" class="consequence-img">
                         </div>
                         <div class="consequence-info">
                             <h3>प्रोस्टेट कैंसर</h3>
@@ -202,9 +209,10 @@
         <section class="how-it-works-section" id="how-it-works">
             <div class="section-container">
                 <h2 class="section-title text-center">Alpha Man कैसे काम करता है</h2>
-                
+
                 <div class="how-works-intro">
-                    <p class="lead-text">Alpha Man एक प्राकृतिक फाइटोकॉम्प्लेक्स है जो प्रोस्टेट ग्रंथि के कामकाज को जल्दी और प्रभावी ढंग से सामान्य करता है और शक्ति बढ़ाता है।</p>
+                    <p class="lead-text">Alpha Man एक प्राकृतिक फाइटोकॉम्प्लेक्स है जो प्रोस्टेट ग्रंथि के कामकाज को
+                        जल्दी और प्रभावी ढंग से सामान्य करता है और शक्ति बढ़ाता है।</p>
                 </div>
 
                 <div class="how-works-details-grid">
@@ -217,7 +225,8 @@
                                 <div class="direction-check"><i class="fa-solid fa-check"></i></div>
                             </div>
                             <div class="direction-item">
-                                <span class="direction-text">प्रोस्टेट और मूत्र पथ कोशिकाओं के ट्यूमर विकृति के विकास को रोकता है</span>
+                                <span class="direction-text">प्रोस्टेट और मूत्र पथ कोशिकाओं के ट्यूमर विकृति के विकास को
+                                    रोकता है</span>
                                 <div class="direction-check"><i class="fa-solid fa-check"></i></div>
                             </div>
                             <div class="direction-item">
@@ -241,7 +250,9 @@
                 <div class="warning-block">
                     <div class="warning-left">
                         <i class="fa-solid fa-triangle-exclamation warning-alert-icon"></i>
-                        <p class="warning-text">इसके अलावा, अद्वितीय हर्बल फॉर्मूला Alpha Man प्रतिरक्षा प्रणाली को उत्तेजित करता है, समग्र स्वास्थ्य में सुधार करता है, मानसिक and शारीरिक थकान से राहत देता है और प्रदर्शन बढ़ाता है।</p>
+                        <p class="warning-text">इसके अलावा, अद्वितीय हर्बल फॉर्मूला Alpha Man प्रतिरक्षा प्रणाली को
+                            उत्तेजित करता है, समग्र स्वास्थ्य में सुधार करता है, मानसिक and शारीरिक थकान से राहत देता है
+                            और प्रदर्शन बढ़ाता है।</p>
                     </div>
                     <div class="warning-right">
                         <img src="prostate-anatomy.png" alt="Prostate Anatomy" class="warning-prostate-img">
@@ -254,7 +265,7 @@
         <section class="composition-section" id="composition">
             <div class="section-container">
                 <h2 class="section-title text-center">संरचना Alpha Man</h2>
-                
+
                 <div class="composition-grid">
                     <!-- Left: Ingredients details -->
                     <div class="ingredients-list">
@@ -287,7 +298,8 @@
                             </div>
                             <div class="ingredient-info">
                                 <h4>विटामिन ई</h4>
-                                <p>पेशाब को सामान्य करता है और रात के समय आग्रह की आवृत्ति को कम करता है। ताकत बढ़ती है।</p>
+                                <p>पेशाब को सामान्य करता है और रात के समय आग्रह की आवृत्ति को कम करता है। ताकत बढ़ती है।
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -315,7 +327,7 @@
                         <i class="fa-regular fa-clock"></i>
                         <span>ऑफर समाप्त होने से पहले खरीदें</span>
                     </div>
-                    
+
                     <!-- Real countdown timer linked to top timer -->
                     <div class="countdown-timer" id="timer-bottom">
                         <div class="time-block">
@@ -343,11 +355,11 @@
                     <form class="lead-form" id="order-form-bottom" action="#" method="POST">
                         <div class="form-group">
                             <label for="name-bottom"><i class="fa-regular fa-user"></i> आपका नाम</label>
-                            <input type="text" id="name-bottom" name="name" placeholder="अपना नाम दर्ज करें" required>
+                            <input type="text" id="name-bottom" name="name" placeholder="अपना नाम दर्ज करें" pattern="[a-zA-Z\u0900-\u097F\s]{2,}" title="केवल अक्षर (English या Hindi) दर्ज करें (कम से कम 2 अक्षर)" required>
                         </div>
                         <div class="form-group">
                             <label for="phone-bottom"><i class="fa-solid fa-phone"></i> फ़ोन नंबर</label>
-                            <input type="tel" id="phone-bottom" name="phone" placeholder="अपना फ़ोन नंबर दर्ज करें" required>
+                            <input type="tel" id="phone-bottom" name="phone" placeholder="अपना फ़ोन नंबर दर्ज करें" pattern="[0-9]{10}" maxlength="10" title="कृपया 10 अंकों का मोबाइल नंबर दर्ज करें" required>
                         </div>
                         <button type="submit" class="submit-btn-bottom">अल्फा मैन खरीदें</button>
                     </form>
@@ -364,7 +376,8 @@
                     <!-- Pointer bubble -->
                     <div class="hero-pointer-bubble bottom-bubble">
                         <i class="fa-solid fa-shield-halved bubble-icon"></i>
-                        <span class="bubble-text">अल्फा मैन प्रोस्टेट ग्रंथि की कार्यप्रणाली को सामान्य करता है और शक्ति बढ़ाता है!</span>
+                        <span class="bubble-text">अल्फा मैन प्रोस्टेट ग्रंथि की कार्यप्रणाली को सामान्य करता है और शक्ति
+                            बढ़ाता है!</span>
                     </div>
                 </div>
             </div>
@@ -375,9 +388,9 @@
     <footer class="main-footer">
         <div class="section-container text-center">
             <p class="footer-links">
-                <a href="#home">होम</a> | 
-                <a href="#symptoms">लक्षण</a> | 
-                <a href="#how-it-works">कार्यप्रणाली</a> | 
+                <a href="#home">होम</a> |
+                <a href="#symptoms">लक्षण</a> |
+                <a href="#how-it-works">कार्यप्रणाली</a> |
                 <a href="#" class="open-privacy">गोपनीयता नीति (Privacy Policy)</a>
             </p>
             <p class="copyright-text">© 2026 Alpha Man. सर्वाधिकार सुरक्षित।</p>
@@ -402,7 +415,8 @@
         <div class="privacy-modal-card">
             <h2>गोपनीयता नीति (Privacy Policy)</h2>
             <div class="privacy-content">
-                <p>हम आपकी गोपनीयता का सम्मान करते हैं। इस वेबसाइट पर एकत्र की गई सभी जानकारी का उपयोग केवल आपके ऑर्डर को संसाधित करने और आपसे संपर्क करने के लिए किया जाएगा।</p>
+                <p>हम आपकी गोपनीयता का सम्मान करते हैं। इस वेबसाइट पर एकत्र की गई सभी जानकारी का उपयोग केवल आपके ऑर्डर
+                    को संसाधित करने और आपसे संपर्क करने के लिए किया जाएगा।</p>
                 <p>हम आपकी व्यक्तिगत जानकारी को किसी भी तीसरे पक्ष के साथ साझा या बेचते नहीं हैं।</p>
                 <p>सुरक्षित और विश्वसनीय सेवा प्रदान करने के लिए हम सभी आवश्यक सुरक्षा उपाय अपनाते हैं।</p>
             </div>
@@ -412,4 +426,5 @@
 
     <script type="module" src="script.js"></script>
 </body>
+
 </html>

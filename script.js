@@ -141,25 +141,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     orderForms.forEach(form => {
         if (form) {
+            const nameInput = form.querySelector('input[name="name"]');
+            const phoneInput = form.querySelector('input[name="phone"]');
+
+            // Restrict name input dynamically to letters (English & Hindi) and spaces only
+            if (nameInput) {
+                nameInput.addEventListener('input', () => {
+                    nameInput.value = nameInput.value.replace(/[^a-zA-Z\u0900-\u097F\s]/g, '');
+                });
+            }
+
+            // Restrict phone input dynamically to digits only, maximum 10 digits
+            if (phoneInput) {
+                phoneInput.setAttribute('maxlength', '10');
+                phoneInput.addEventListener('input', () => {
+                    phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
+                });
+            }
+
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 
-                const nameInput = form.querySelector('input[name="name"]');
-                const phoneInput = form.querySelector('input[name="phone"]');
-                
                 let isValid = true;
 
-                // Basic Name Validation (Length Check)
-                if (nameInput.value.trim().length < 2) {
+                // Name Validation (Only alphabets and spaces, length >= 2)
+                const nameValue = nameInput.value.trim();
+                const nameRegex = /^[a-zA-Z\u0900-\u097F\s]{2,}$/;
+                if (!nameRegex.test(nameValue)) {
                     nameInput.style.borderColor = 'var(--color-red)';
                     isValid = false;
                 } else {
                     nameInput.style.borderColor = 'rgba(255, 255, 255, 0.15)';
                 }
 
-                // Phone Validation (Must contain only digits and basic symbols like +, -, spaces, length 8-15)
-                const phoneRegex = /^[+]?[0-9\s\-]{8,15}$/;
-                if (!phoneRegex.test(phoneInput.value.trim())) {
+                // Phone Validation (Exactly 10 digits)
+                const phoneValue = phoneInput.value.trim();
+                const phoneRegex = /^[0-9]{10}$/;
+                if (!phoneRegex.test(phoneValue)) {
                     phoneInput.style.borderColor = 'var(--color-red)';
                     isValid = false;
                 } else {
@@ -173,9 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Disable button and show processing state to user
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'भेजा जा रहा है...';
-
-                    const nameValue = nameInput.value.trim();
-                    const phoneValue = phoneInput.value.trim();
 
                     // Duplicate Lead Prevention Check (Client-side)
                     const normalizedPhone = phoneValue.replace(/\D/g, "");
