@@ -192,6 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'भेजा जा रहा है...';
 
+                    // Track Meta Pixel Lead Event
+                    if (typeof window.fbq === 'function') {
+                        window.fbq('track', 'Lead');
+                    }
+
                     // Duplicate Lead Prevention Check (Client-side)
                     const normalizedPhone = phoneValue.replace(/\D/g, "");
                     let submittedPhones = [];
