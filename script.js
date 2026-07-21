@@ -192,10 +192,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'भेजा जा रहा है...';
 
-                    // Track Meta Pixel Lead Event
-                    if (typeof window.fbq === 'function') {
-                        window.fbq('track', 'Lead');
-                    }
+                    // Function to fire Meta Pixel Lead event
+                    const fireMetaPixelLead = () => {
+                        try {
+                            if (typeof window.fbq === 'function') {
+                                window.fbq('track', 'Lead', {
+                                    content_name: 'Alpha Man',
+                                    value: 1999,
+                                    currency: 'INR'
+                                });
+                                console.log('✅ Meta Pixel Lead Event Tracked Successfully!');
+                            } else if (typeof fbq === 'function') {
+                                fbq('track', 'Lead', {
+                                    content_name: 'Alpha Man',
+                                    value: 1999,
+                                    currency: 'INR'
+                                });
+                                console.log('✅ Meta Pixel Lead Event Tracked via fbq!');
+                            } else {
+                                console.warn('⚠️ Meta Pixel (fbq) is not defined or blocked by AdBlocker.');
+                            }
+                        } catch (err) {
+                            console.error('❌ Error tracking Meta Pixel Lead event:', err);
+                        }
+                    };
+
+                    // Fire Meta Pixel Lead Event immediately on submission
+                    fireMetaPixelLead();
 
                     // Duplicate Lead Prevention Check (Client-side)
                     const normalizedPhone = phoneValue.replace(/\D/g, "");
@@ -208,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (submittedPhones.includes(normalizedPhone)) {
                         console.warn('Duplicate lead prevented for number:', phoneValue);
-                        // Mimic successful submission flow for UX consistency
+                        // Still ensure pixel lead event was fired above for test tracking
                         setTimeout(() => {
                             submitBtn.disabled = false;
                             submitBtn.textContent = originalBtnText;
