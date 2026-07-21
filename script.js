@@ -196,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const fireMetaPixelLead = () => {
                         try {
                             if (typeof window.fbq === 'function') {
+                                window.fbq('track', 'Lead');
                                 window.fbq('track', 'Lead', {
                                     content_name: 'Alpha Man',
                                     value: 1999,
@@ -203,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 });
                                 console.log('✅ Meta Pixel Lead Event Tracked Successfully!');
                             } else if (typeof fbq === 'function') {
+                                fbq('track', 'Lead');
                                 fbq('track', 'Lead', {
                                     content_name: 'Alpha Man',
                                     value: 1999,
